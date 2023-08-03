@@ -1,0 +1,10 @@
+{
+    "manifest_version": 3,
+    "name": "TodoList",
+    "version": "1.0.0",
+    "description": "Une extension pratique pour gérer vos tâches et rester organisé(e).",
+    "action": {
+        "default_popup": "index.html"
+    }
+
+}
