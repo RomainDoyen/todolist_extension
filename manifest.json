@@ -4,7 +4,22 @@
     "version": "1.0.0",
     "description": "Une extension pratique pour gérer vos tâches et rester organisé(e).",
     "action": {
-        "default_popup": "index.html"
-    }
-
+        "default_popup": "pages/index.html",
+        "default_icon": {
+            "16": "images/tache.png",
+            "32": "images/tache.png",
+            "48": "images/tache.png",
+            "128": "images/tache.png"
+        }
+    },
+    "icons": {
+        "16": "images/tache.png",
+        "32": "images/tache.png",
+        "48": "images/tache.png",
+        "128": "images/tache.png"
+    },
+    "permissions": [
+        "storage",
+        "activeTab"
+    ]
 }
