@@ -17,6 +17,11 @@ document.addEventListener('DOMContentLoaded', function () {
         saveTasks();
     }
 
+    function udpateTask(index, taskText) {
+        tasks[index] = taskText;
+        saveTasks();
+    }
+
     function renderTasks() {
         var taskList = document.getElementById("myUL");
         taskList.innerHTML = "";
@@ -32,6 +37,11 @@ document.addEventListener('DOMContentLoaded', function () {
             span.className = "close";
             span.appendChild(txt);
             li.appendChild(span);
+
+            var editEmoji = document.createElement("span");
+            editEmoji.innerHTML = "🖋️"; // Vous pouvez utiliser un emoji de modification
+            editEmoji.className = "edit-emoji";
+            li.appendChild(editEmoji);
 
             li.setAttribute("data-index", i); // Attribut personnalisé pour conserver l'index de la tâche
 
@@ -62,6 +72,18 @@ document.addEventListener('DOMContentLoaded', function () {
             var index = parseInt(li.getAttribute("data-index"));
             removeTask(index);
             renderTasks(); // Réaffichez les tâches après la suppression
+        }
+    });
+
+    taskList.addEventListener("click", function (event) {
+        if (event.target && event.target.matches("span.edit-emoji")) {
+            var li = event.target.parentElement;
+            var index = parseInt(li.getAttribute("data-index"));
+            var taskText = prompt("Modifier la tâche :", tasks[index]);
+            if (taskText !== null) {
+                udpateTask(index, taskText);
+                renderTasks();
+            }
         }
     });
 

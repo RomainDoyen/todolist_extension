@@ -82,3 +82,14 @@ h4 {
 .close:hover {
     color: red;
 }
+
+.edit-emoji {
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.edit-emoji:hover {
+    background-color: rgb(78, 73, 83);
+}
